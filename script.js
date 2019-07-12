@@ -34,7 +34,7 @@ function createAlias(){
              var json = JSON.parse(data);
              var message = json['message'];
              if(message === 'Alias has been created. Please wait 60 seconds before sending emails to the alias. Doing so ensures that the all systems have been updated and emails are not lost.'){
-                 showResponse("Success!"," Your alias has been created. Please wait 60 seconds before sending emails to the alias. After the small delay, all emails sent to \""+aliasInput.value+"@pseudoname.io\" will be automatically forwarded to \""+realEmailInput.value+"\". A \"Copy Alias\" button will appear when the countdown has ended.", 3);
+                 showResponse("Success!"," Your alias has been created. Please wait 60 seconds before sending emails to the alias. After the small delay, all emails sent to \""+aliasInput.value+"@dogmail.netlify.com\" will be automatically forwarded to \""+realEmailInput.value+"\". A \"Copy Alias\" button will appear when the countdown has ended.", 3);
              }else if(message === 'Error: Duplicate alias request refused.'){
                  showResponse("Error: Alias Already Taken", "The alias you requested is already in use. Please choose another.", 2);
              }else{
@@ -208,7 +208,7 @@ function copyAliasToClipboard(){
     var button = document.getElementById("copyAliasButton");
     var dummyInput = document.createElement("input");
     document.body.appendChild(dummyInput);
-    dummyInput.setAttribute('value', document.getElementById("alias").value + '@pseudoname.io');
+    dummyInput.setAttribute('value', document.getElementById("alias").value + '@dogmail.netlify.com');
     dummyInput.select();
     document.execCommand("copy");
     document.body.removeChild(dummyInput);
